@@ -16,12 +16,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-latest , macos-latest-arm64 ]
+        os: [ windows-latest-x64 , macos-latest-arm64 ]
     steps:
       - uses: actions/checkout@v4
       - uses: graalvm/setup-graalvm@v1
         with:
-          version: '21.0.2'
           gds-token: ${{ secrets.GDS_TOKEN }}
           java-version: '21'
           components: 'native-image'
