@@ -3,6 +3,8 @@ name: GraalVM Native Image Build
 on:
   push:
     branches: [ main ]
+    tags:
+      - v*.*.*
   workflow_dispatch:
 
 jobs:
@@ -29,7 +31,7 @@ jobs:
       - name: Upload binary
         uses: actions/upload-artifact@v4
         with:
-          path: target/api
+          path: target/api.exe
 
 
       - name: Upload native binary to GitHub Release
