@@ -23,7 +23,7 @@ jobs:
         with:
           version: '21.0.2'
           gds-token: ${{ secrets.GDS_TOKEN }}
-          java-version: '17'
+          java-version: '21'
           components: 'native-image'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           native-image-job-reports: 'true'
