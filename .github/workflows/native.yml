@@ -5,18 +5,14 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-env:
-  REGISTRY: ghcr.io   # Uncomment if you're pushing to GitHub
-  IMAGE_NAME: ${{ github.repository }}  # Uncomment if you're pushing to GitHub
-
-
 jobs:
   build:
     name: Simple Spring Boot Sample on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-latest-x64 , macos-latest-arm64 ]
+        os: [ windows-latest ]
+        platform: [ x64 ]
     steps:
       - uses: actions/checkout@v4
       - uses: graalvm/setup-graalvm@v1
